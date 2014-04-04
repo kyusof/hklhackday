@@ -1,0 +1,43 @@
+{
+    "name": "HKL Hackday - Team 007",
+    "description": "JIRA Helper",
+    "version": "1.0",
+    "manifest_version": 2,
+    "permissions": ["activeTab", "tabs", "*://staging.alchemysocial.com/", "*://dev.alchemysocial.com/", "*://*/*"],
+    "background": {
+        "scripts": ["/js/jquery.min.js", "background.js"],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_icon" : "icon.png",
+        "default_title": "HKLHackday"
+    },
+    "commands": {
+        "open-google": {
+            "description": "Open a tab to google.com",
+            "suggested_key": { "default": "Ctrl+Shift+L" }
+        },
+        "_execute_browser_action": {
+        "suggested_key": { "default": "Ctrl+Shift+K" }
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://dev.alchemysocial.com/*",
+                "http://clients.us.hitwise.com/*",
+                "*://staging.alchemysocial.com/*"
+            ],
+            "js": [
+                "/js/jquery.min.js",
+                "/bootstrap/js/bootstrap.min.js"
+            ],
+            "css": [
+                "content.css"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "content.css"
+    ]
+}

@@ -1,0 +1,11 @@
+.jira_box {
+    background-color: #555555;
+    border:1px solid #cc0000,
+    border-radius:4px,
+    position:absolute,
+    height:250px,
+    top:2px,
+    right: 10px,
+    width:550px,
+    z-index: 10000
+}
